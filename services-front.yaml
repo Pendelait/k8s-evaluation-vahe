@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-site-vahe-service
+spec:
+  selector:
+    app: front-site-vahe
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: LoadBalancer
+

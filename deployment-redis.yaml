@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-vahe
+  labels:
+    app: redis-vahe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-vahe
+  template:
+    metadata:
+      labels:
+        app: redis-vahe
+    spec:
+      containers:
+        - name: redis-vahe
+          image: redis
+          ports:
+            - containerPort: 6379
+
+
+
+          

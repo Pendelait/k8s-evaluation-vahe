@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-site-vahe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-site-vahe
+  template:
+    metadata:
+      labels:
+        app: front-site-vahe
+    spec:
+      imagePullSecrets:
+        - name: pain
+      containers:
+        - name: front-site
+          image: cloud.canister.io:5000/vahevien/front-site:1
+          
